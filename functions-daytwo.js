@@ -1,161 +1,91 @@
 // START OF LONG 1
-//http://jsbin.com/roseboguyu/edit?js,console
 
 
-function lengths(arrayofstring){
+var words = ["hello", "what", "is" , "up", "dude"];
 
- console.log(arrayofstring.length);
+function arrayOfWords(wordy){
 
-  //need to store the numbers into an array
-  var storearray = [];
+var storeLength;
+storeLength = [];
 
-  for(var i = 0; i < arrayofstring.length; i++){
+words.forEach (function (wordy){
+storeLength.push(wordy.length);
+});
 
-    //console.log(arrayofstring[i].length);
+//console.log(storeLength);
+  return storeLength;
 
-    storearray.push(arrayofstring[i].length);
+};
 
-  }
-
-  return storearray;
-
-
-}
+console.log(arrayOfWords(words));
 
 
 
-var words = ["hello", "what", "is", "up", "dude"]
-lengths(words);
 
-console.log(lengths(words));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //END OF LONG 1
-
-
-//START OF LONG 2
-//http://jsbin.com/cebobikozu/edit?js,console
-
-function transmogrifier(num1,num2,num3){
-
-  var totalfirstsecond = num1 * num2;
-
-  var power = Math.pow(totalfirstsecond, num3);
-
-  console.log (power);
-
- return power;
-
-}
-
-transmogrifier(5, 4, 3);
-transmogrifier(13, 12, 5);
-transmogrifier(42, 13, 7);
-
-
-//START OF LONG 3
-//http://jsbin.com/kicuqiwesi/edit?js,console,output
-
-
-function wordReverse(stringofwords){
-
-  var str = stringofwords;
-
-var splitted1 = (str.split(" ").reverse().join(" "));
-
-  return (splitted1);
-
-}
-
-
-
-function wordReverse2(stringofwords2){
-
-  var str2 = stringofwords2;
-
-splitted2 = (str2.split(" ").reverse().join(" "));
-
-  return splitted2;
-
-
-}
-
-var words = "Now I know what a TV dinner feels like";
-wordReverse(words);
-
-
-var words2 = "Put Hans back on the line";
-wordReverse2(words2);
-
-//END OF LONG 3
-
-
-//START OF SHORT 1
-
-function maxOfTwoNumbers(num1,num2){
-
-  if (num1 > num2){
-
-   return num1;
-
-  } else{
-
-    return num2;
-
-  }
-
-
-}
-
-//example
-
-console.log (maxOfTwoNumbers(2,9));
-//END OF SHORT 1
 
 //START OF SHORT 4
 
 
-function sumArray(arrayofnumbers){
+//for sumArray
+var numbers = [1,2,3,4];
+
+function sumArray (addynumber) {
+
+var sum;
+sum = 0;
 
 
-    console.log(arrayofnumbers);
+numbers.forEach(function addynumber(value) {
+  sum += value; }
 
-  var total = 0;
+);
 
-  for (var j = 0; j < arrayofnumbers.length ; j++){
+  //console.log(sum);
+     return sum;
 
-    total += arrayofnumbers[j];
+};
 
-  }
-
- console.log (total);
-
-}
+console.log(sumArray(numbers));
 
 
-function multipleArray(arraymulofnumbers){
+//for multipleArray
+
+var numbers = [1,2,3,4];
+
+function mulArray (mulnumber) {
+
+var mul;
+mul = 1;
 
 
-    console.log(arraymulofnumbers);
+numbers.forEach(function mulnumber(value) {
+  mul *= value; }
 
-  var totalmul = 1;
+);
 
-  for (var h = 0; h < arraymulofnumbers.length ; h++){
+  //console.log(sum);
+     return mul;
 
-    totalmul *= arraymulofnumbers[h];
+};
 
-  }
-
- console.log (totalmul);
-
-}
+console.log(mulArray(numbers));
 
 
-var mulnumbers = [1, 2, 3, 4];
-multipleArray(mulnumbers);
-
-
-var numbers = [1, 2, 3, 4];
-sumArray(numbers);
 
 
 
@@ -163,55 +93,31 @@ sumArray(numbers);
 
 //end of short 4
 
-//start of short 5
-
-var numberOfArguments = function () {
- return arguments.length
-}
-
-console.log(numberOfArguments("ironman"));
-console.log(numberOfArguments("ironman","pikachu"));
-
-
-//end of short 5
-
-
-//start of short6
-
-
-function reverseString(stringofwords){
-
-  var str = stringofwords;
-
-var splitted1 = (str.split("").reverse().join(""));
-
-  console.log (splitted1);
-
-}
-
-var words = "jag testar";
-reverseString(words);
-
-//endofshort6
-
 
 //start of short7
 
-function findLongestWord(str) {
-  var words = str.split(' ');
-  var longestLength = 0;
-  var longestWord;
-  for (var i=0;i<words.length;i++) {
-    if (words[i].length > longestLength) {
-       longestLength = words[i].length;
-       longestWord = words[i];
-    }
-  }
-  return longestWord;
-}
+var str = "The quick brown fox jumped over the lazy dog";
 
-console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
 
+
+function findLongestWord(longword){
+
+var res;
+res= str.split(" "); // split the string into an array of words with separator "space"
+var longest = res.reduce(function(a,b) { // a is what we want to compare; b is the previous compared string
+    if (a.length > b.length) { // if the new string is longer
+        return a; // the new string is the longest string
+    } else {return b;} // otherwise the old string is still the longest
+})
+
+     return longest;
+
+
+};
+
+findLongestWord();
+
+console.log(findLongestWord(str));
 
 //endofshort7
 
