@@ -42,48 +42,30 @@ console.log(arrayOfWords(words));
 
 
 //for sumArray
-var numbers = [1,2,3,4];
+var sumArr = [1, 2, 3, 4];
 
-function sumArray (addynumber) {
+var totalSum = sumArr.reduce (function (x, y){
 
-var sum;
-sum = 0;
+return x + y;
 
+});
 
-numbers.forEach(function addynumber(value) {
-  sum += value; }
+console.log (totalSum);
 
-);
-
-  //console.log(sum);
-     return sum;
-
-};
-
-console.log(sumArray(numbers));
 
 
 //for multipleArray
 
-var numbers = [1,2,3,4];
+var mulArr = [1, 2, 3, 4];
 
-function mulArray (mulnumber) {
+var totalMul = mulArr.reduce (function (x, y){
 
-var mul;
-mul = 1;
+return x * y;
 
+});
 
-numbers.forEach(function mulnumber(value) {
-  mul *= value; }
+console.log (totalMul);
 
-);
-
-  //console.log(sum);
-     return mul;
-
-};
-
-console.log(mulArray(numbers));
 
 
 
@@ -96,42 +78,37 @@ console.log(mulArray(numbers));
 
 //start of short7
 
-var str = "The quick brown fox jumped over the lazy dog";
+var sentence = "The quick brown fox jumped over the lazy dog" ;
+sentence = sentence.split(" ");
 
+ var long = function (a, b) {
+ if (a.length > b.length) {
+   return a
+ } else {
+   return b
+ }
+}
 
+var findLongestWords = function (strings) {
+ return strings.reduce(long)
+}
 
-function findLongestWord(longword){
-
-var res;
-res= str.split(" "); // split the string into an array of words with separator "space"
-var longest = res.reduce(function(a,b) { // a is what we want to compare; b is the previous compared string
-    if (a.length > b.length) { // if the new string is longer
-        return a; // the new string is the longest string
-    } else {return b;} // otherwise the old string is still the longest
-})
-
-     return longest;
-
-
-};
-
-findLongestWord();
-
-console.log(findLongestWord(str));
+console.log(findLongestWords(sentence))
 
 //endofshort7
 
 
 //start of short8
-function filterLongWord (array, int) {
- var longWord = []
- for (var i = 0; i < array.length; i++) {
-   if (array[i].length > int) {
-     longWord.push(array[i])
-   }
- }
- return longWord
+
+
+var filterLongWords = function (arr, x) {
+ return arr.filter(function length (word) {
+   return word.length > x
+ })
 }
-console.log(filterLongWord(['HappyBirthday', 'Freedom', 'Responsibility', 'Freeze', 'Fame'], 5))
+
+console.log(filterLongWords(sentence, 4))
+
+
 
 //endofshort8
